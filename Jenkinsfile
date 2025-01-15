@@ -4,7 +4,7 @@ pipeline {
     environment {
         BRANCH_NAME = 'main'
         GIT_URL = 'https://github.com/bilacando/awscicd.git'
-        IMAGE_TAG = 'bilacando/awscicd'
+        IMAGE_TAG = 'awscicd'
         IMAGE_VERSION = "${BUILD_NUMBER}"
     }
 
@@ -20,13 +20,6 @@ pipeline {
                 sh 'docker build -t "${IMAGE_TAG}: ${IMAGE_VERSION}" .'
                 sh 'docker images'
 
-            }
-        }
-
-
-        stage('test'){
-            steps{
-                sh 'echo test'
             }
         }
     }
