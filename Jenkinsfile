@@ -6,7 +6,6 @@ pipeline {
         GIT_URL = 'https://github.com/bilacando/awscicd.git'
         IMAGE_TAG = 'awscicd'
     }
-
     stages{
         stage('git checkout'){
             steps{
