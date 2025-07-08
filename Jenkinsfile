@@ -5,7 +5,7 @@ pipeline {
     BRANCH_NAME = 'main'
     GIT_URL = 'https://github.com/ReachforIt25/awscicd1.git'
     IMAGE_TAG = 'reachforit/awscicd1'
-    IMAGE_VERSION = ${BUILD_NUMBER}
+    IMAGE_VERSION = "${BUILD_NUMBER}"
  }
 
 
