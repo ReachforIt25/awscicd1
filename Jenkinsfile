@@ -4,6 +4,8 @@ pipeline {
  environment {
     BRANCH_NAME = 'main'
     GIT_URL = 'https://github.com/ReachforIt25/awscicd1.git'
+    IMAGE_TAG = 'reachforit/awscicd1'
+    IMAGE_VERSION = ${BUILD_NUMBER}
  }
 
 
@@ -15,7 +17,7 @@ pipeline {
         }
         stage("docker build"){
             steps{
-                sh ' docker build -t awscicd1 . '
+                sh ' docker build -t "${IMAGE_TAG}:${IMAGE_VERSION}" . '
                 sh 'docker images'
             }
         }
